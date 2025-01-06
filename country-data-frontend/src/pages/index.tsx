@@ -197,17 +197,29 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+// Define the interface for a Country
+interface Country {
+  name: string;
+  flag: string;
+  region: string;
+}
+
 export default function Home() {
-  const [countries, setCountries] = useState([]);
+  const [countries, setCountries] = useState<Country[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
+  const [selectedRegion, setSelectedRegion] = useState(''); // Selected region state
 
   useEffect(() => {
     const fetchCountries = async () => {
       try {
         const response = await axios.get('http://localhost:3001/countries');
-        setCountries(response.data);
+        // name a-z
+        const sortedCountries = response.data.sort((a: any, b: any) =>
+          a.name.localeCompare(b.name)
+        );
+        setCountries(sortedCountries);
         setLoading(false);
       } catch (err) {
         setError('Failed to load countries');
