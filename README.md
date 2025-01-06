@@ -11,3 +11,7 @@ This project is a full-stack web application that displays country information u
 
 - Node.js (v14.x or higher)
 - npm or yarn or pnpm
+
+## Running
+
+- I have combined the npm run dev f-end and b-end scripts. Now run npm run dev from root directory (makes use of concurrently)

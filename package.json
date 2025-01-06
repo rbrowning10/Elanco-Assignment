@@ -1,0 +1,25 @@
+{
+  "name": "fork-elanco-assignment",
+  "version": "1.0.0",
+  "description": "This project is a full-stack web application that displays country information using the REST Countries API. It consists of a frontend built with React/Next.js and a backend built with Node.js/Express.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"npm run dev --prefix country-data-backend\" \"npm run dev --prefix country-data-frontend\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rbrowning10/Elanco-Assignment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/rbrowning10/Elanco-Assignment/issues"
+  },
+  "homepage": "https://github.com/rbrowning10/Elanco-Assignment#readme",
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
