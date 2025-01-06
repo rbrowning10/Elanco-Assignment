@@ -248,36 +248,38 @@ export default function Home() {
 
   return (
     <div className="p-6">
-      {/* Search Input */}
-      <div className="mb-4">
-        <label htmlFor="search" className="block text-gray-700 mb-2">
-          Search for a Country
-        </label>
-        <input
-          id="search"
-          type="text"
-          placeholder="Enter country name"
-          className="border border-gray-300 p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-      </div>
+      <div className="flex flex-col sm:flex-row sm:space-x-4 mb-4">
+        {/* Search Input */}
+        <div className="w-full sm:w-1/2 mb-4 sm:mb-0">
+          <label htmlFor="search" className="block text-gray-700 mb-2">
+            Search for a Country
+          </label>
+          <input
+            id="search"
+            type="text"
+            placeholder="Enter country name"
+            className="border border-gray-300 p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
 
-      {/* Region Dropdown */}
-      <div className="mb-4">
-        <label className="block text-gray-700 mb-2">Filter by Region</label>
-        <select
-          value={selectedRegion}
-          onChange={(e) => setSelectedRegion(e.target.value)} // Update selected region
-          className="border border-gray-300 p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-        >
-          <option value="">All Regions</option>
-          <option value="Africa">Africa</option>
-          <option value="Americas">Americas</option>
-          <option value="Asia">Asia</option>
-          <option value="Europe">Europe</option>
-          <option value="Oceania">Oceania</option>
-        </select>
+        {/* Region Dropdown */}
+        <div className="w-full sm:w-1/2">
+          <label className="block text-gray-700 mb-2">Filter by Region</label>
+          <select
+            value={selectedRegion}
+            onChange={(e) => setSelectedRegion(e.target.value)} // Update selected region
+            className="border border-gray-300 p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            <option value="">All Regions</option>
+            <option value="Africa">Africa</option>
+            <option value="Americas">Americas</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="Oceania">Oceania</option>
+          </select>
+        </div>
       </div>
 
       {/* Display filtered countries */}
@@ -286,7 +288,6 @@ export default function Home() {
           filteredCountries.map((country) => (
             <div
               key={country.name}
-              /*className="bg-white rounded-lg shadow-md p-4 border-2 border-black hover:shadow-lg transition-shadow duration-300"*/
               className="bg-white rounded-lg shadow-md p-4 border-2 border-black hover:shadow-lg hover:border-blue-500 hover:scale-105 transition-transform duration-300 transform focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               {/* Flag column */}
